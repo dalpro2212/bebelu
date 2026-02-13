@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor Bonito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="intro-rosas">
+    <img src="decoracion/intro-rosas.png" class="rosa-intro izquierda">
+    <img src="decoracion/intro-rosas2.png" class="rosa-intro derecha">
+</div>
+<img src="decoracion/rosa-rosada.png" class="rosa-esquina" alt="Rosa decorativa">
+
+<h1 class="titulo-amor">
+    FELIZ SAN VALENTÍN AMOR ❤️
+</h1>
+
+<div class="mensaje-final">
+    <p>
+        Gracias por cada sonrisa, cada abrazo y cada momento juntos.
+        Contigo aprendí que el amor no es perfecto, pero sí verdadero.
+        Te elijo hoy, mañana y siempre. 💛
+    </p>
+</div>
+
+<div class="boton-audio">
+    <button id="playBtn">▶️ Reproducir tu música favorita ❤️</button>
+    <audio id="music" src="audio/Pasilyo.mp3"></audio>
+</div>
+
+<div class="cuadro-fotos">
+    <img src="imagenes/Documento A4 Carta de Amor Recortes Sencilla Beige.jpg" alt="Nosotros 1">
+    <img src="imagenes/borrosas.jpg" alt="Nosotros 2">
+    <img src="imagenes/mki bb.jpeg" alt="Nosotros 3">
+    <img src="imagenes/WhatsApp Image 2026-02-06 at 17.08.53 (3).jpeg" alt="Nosotros 4">
+
+    <video src="imagenes/VID_20251215_210343.mp4" controls></video>
+
+    <img src="imagenes/Foto de Panadero(1).jpg" alt="Nosotros 5">
+
+    <video src="imagenes/VN20260116_232155.mp4" controls></video>
+
+    <img src="imagenes/Foto de Panadero.jpg" alt="Nosotros 6">
+
+    <video src="imagenes/Video de Panadero.mp4" controls></video>
+</div>
+
+<script>
+    const playBtn = document.getElementById('playBtn');
+    const music = document.getElementById('music');
+
+    playBtn.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            playBtn.textContent = '⏸️ Pausar música';
+        } else {
+            music.pause();
+            playBtn.textContent = '▶️ Reproducir tu música favorita ❤️';
+        }
+    });
+
+    const recuerdos = document.querySelectorAll('.cuadro-fotos img, .cuadro-fotos video');
+
+    recuerdos.forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('activa');
+        });
+    });
+</script>
+
+</body>
+</html>
